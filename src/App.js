@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.scss'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { AboutUs } from './pages/AboutUs'
+import { Services } from './pages/Services'
+import { News } from './pages/News'
+import { Contacts } from './pages/Contacts'
+
+// import { Layout } from './components/Layout'
+// import { NavigationBar } from './components/Navigation'
+// import { Header } from './components/Header'
+// import { Slide } from './components/Carousel'
+// import { JumboContainer } from './components/AboutUs'
+// import { Cards } from './components/News'
+// import { Service } from './components/Services'
+// import { Footer } from './components/Footer'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {/* <Header />
+      <NavigationBar />
+      <Slide />
+      <JumboContainer />
+      <Cards />
+      <Service />
+      <Footer /> */}
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/services" component={Services} />
+            <Route exact path="/about_us" component={AboutUs} />
+            <Route exact path="/contacts" component={Contacts} />
+          </Switch>
+        </Router>
+    </React.Fragment>
   );
 }
 
