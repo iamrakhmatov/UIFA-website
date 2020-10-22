@@ -46,6 +46,7 @@ const Styled = styled.div`
         }
     }
 
+
 `
 
 export const JumboContainer = () => {
